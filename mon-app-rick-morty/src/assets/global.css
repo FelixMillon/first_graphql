@@ -1,0 +1,27 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.question {
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question h1 {
+    color: #333;
+}
+
+.question ul {
+    margin-top: 20px;
+}
+
+.question li {
+    line-height: 1.6;
+}
