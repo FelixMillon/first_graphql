@@ -8,9 +8,9 @@
       Une erreur est survenue.
     </div>
     <div v-else-if="result && result.characters">
-      <div class="questions-overview">
-        <h2 class="overview-title">Liste des Personnages</h2>
-        <ul class="questions-list">
+      <div class="overview">
+        <h2 class="title">Liste des Personnages</h2>
+        <ul class="list">
           <li v-for="character in result.characters.results" :key="character.id">
             <router-link :to="{ name: 'detail', params: { id: character.id }}">
               <img :src="character.image" alt="" style="width: 50px; height: auto;"> {{ character.name }}
