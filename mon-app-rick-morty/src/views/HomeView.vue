@@ -57,7 +57,7 @@
 }
 
 .character-item {
-  width: calc(33.33% - 20px); /* 3 items per row with some margin between them */
+  width: calc(33.33% - 20px);
   margin-bottom: 20px;
   margin-right: 20px;
   box-sizing: border-box;
