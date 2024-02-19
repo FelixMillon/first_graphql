@@ -1,19 +1,31 @@
 <template>
-  <div class="detail-container">
-    <h1>Détails du Produit</h1>
+  <div class="detail-container page-content">
+    <h1>Détails du Personnage</h1>
     <div v-if="item">
       <h2>{{ item.name }}</h2>
-      <img :src="item.image" alt="Image du produit" style="width: 100%; max-width: 400px;">
-      <p>Ceci est une description détaillée de {{ item.name }}.</p>
+      <img :src="item.image" alt="Image du personnage" style="width: 100%; max-width: 400px;">
+      <p><strong>Status:</strong> {{ item.status }}</p>
+      <p><strong>Species:</strong> {{ item.species }}</p>
+      <p><strong>Type:</strong> {{ item.type || "N/A" }}</p>
+      <p><strong>Gender:</strong> {{ item.gender }}</p>
+      <p><strong>Origin:</strong> {{ item.origin.name }}</p>
+      <p><strong>Location:</strong> {{ item.location.name }}</p>
+      <div>
+        <strong>Episodes:</strong>
+        <ul>
+          <li v-for="episode in item.episode" :key="episode">{{ episode }}</li>
+        </ul>
+      </div>
     </div>
     <div v-else>
       <p>Chargement des détails...</p>
     </div>
+    <router-link to="/" class="back-button">Retour à l'accueil</router-link>
   </div>
-  <router-link to="/" class="back-button">Retour à l'accueil</router-link>
 </template>
 
 <script>
+import rickAndMortyData from '@/assets/data.json';
 export default {
   name: 'DetailView',
   props: ['id'],
@@ -27,44 +39,24 @@ export default {
   },
   methods: {
     loadItemDetails() {
-      const items = [
-        { id: 1, name: 'Produit A', image: 'lien-vers-image-a.jpg' },
-        { id: 2, name: 'Produit B', image: 'lien-vers-image-b.jpg' },
-      ];
-      
-      this.item = items.find(item => item.id === parseInt(this.$route.params.id));
+      this.item = rickAndMortyData.results.find(item => item.id === parseInt(this.id));
     }
   }
 }
 </script>
 
 <style scoped>
-.detail-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-  font-family: 'Arial', sans-serif;
+.detail-container p,
+.detail-container ul {
+  margin: 10px 0;
 }
 
-h1 {
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
+.detail-container ul {
+  list-style-type: none;
+  padding-left: 20px;
 }
 
-.back-button {
-  display: inline-block;
-  margin-bottom: 20px;
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.back-button:hover {
-  background-color: #0056b3;
+.detail-container li {
+  line-height: 1.6;
 }
 </style>
