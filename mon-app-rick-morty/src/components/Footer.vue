@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-      <p>&copy; {{ currentYear }} - graph-ql. Ian GALMICHE - Felix MILLON - Elone MACCIONI.</p>
+      <p>&copy; {{ currentYear }} - graph-ql. Ian GALMICHE - Felix MILLON - Elone MACCIONI - Ilyès BOULKRINAT</p>
     </footer>
   </template>
   
