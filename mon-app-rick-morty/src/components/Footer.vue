@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-      <p>&copy; {{ currentYear }} - Projet développement durable. Ian GALMICHE.</p>
+      <p>&copy; {{ currentYear }} - graph-ql. Ian GALMICHE - Felix MILLON - Elone MACCIONI.</p>
     </footer>
   </template>
   

@@ -1,4 +1,4 @@
-# dev-durable
+# graph-ql
 
 ## Project setup
 ```
